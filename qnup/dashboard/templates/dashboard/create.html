@@ -1,0 +1,25 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}
+Создать задачу
+{% endblock %}
+
+{% block get_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>Создать новую задачу</h1>
+
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.title }}<br>
+                {{ form.task }}<br>
+                <input type="submit" value="Отправить" class="btn btn-success"/>
+                <span>{{error}}</span>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
